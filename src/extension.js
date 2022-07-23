@@ -36,6 +36,10 @@ function _original() {
     Main.messageTray.bannerAlignment = _originalBannerAlignment;
 }
 
+function block() {
+    Main.messageTray.bannerBlocked = true;
+}
+
 // This function could be called after your extension is enabled, which could
 // be done from GNOME Tweaks, when you log in or when the screen is unlocked.
 //
@@ -44,6 +48,7 @@ function _original() {
 function enable() {
     log(`enabling ${Me.metadata.name} version ${Me.metadata.version}`);
     right();
+    block();
 }
 
 // This function could be called after your extension is uninstalled, disabled
